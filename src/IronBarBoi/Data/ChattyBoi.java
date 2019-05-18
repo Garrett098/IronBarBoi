@@ -1,5 +1,6 @@
-package IronBarBoi;
+package IronBarBoi.Data;
 
+import IronBarBoi.Main;
 import org.rspeer.runetek.event.types.ChatMessageEvent;
 import org.rspeer.ui.Log;
 
