@@ -1,0 +1,60 @@
+JFDML JFormDesigner: "6.0.6.4.204" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp tabbedPane1::t:::x}"
+			"$verticalGroup": "par l {comp tabbedPane1::t:::x}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {comp scrollPane1::l::618:x, seq t {par l {seq {space :p:187:p, comp label1:::p:179:p}, seq l {space :::p, comp testBtn1:::p:93:p, space :p:29:p, comp checkBox1:::p:128:p}}, space ::63:x, par l {comp scrollPane2::t:p:189:p, seq t {comp findGateBtn:::p:183:p, space :::p}}}}"
+					"$verticalGroup": "par l {seq t {space :::p, comp label1:::p:28:p, space :::p, par l {par b {comp testBtn1::b:p::p, comp checkBox1::b:p:30:p}, comp findGateBtn::l:p::p}, space :p:24:p, comp scrollPane2::::209:x, space :::p, comp scrollPane1:::p:181:p}}"
+				} ) {
+					name: "panel1"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "textArea1"
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "testBtn1"
+						"text": "Test1"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "testBtn1ActionPerformed", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "testBtn1ActionPerformed", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "testBtn1ActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Current Target:"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label1MouseClicked", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "checkBox1"
+						"text": "text"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						add( new FormComponent( "javax.swing.JList" ) {
+							name: "list1"
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "findGateBtn"
+						"text": "Findgate"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "findGateBtnActionPerformed", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Debug"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 620, 555 )
+		} )
+	}
+}
