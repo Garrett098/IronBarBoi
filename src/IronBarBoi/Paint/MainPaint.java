@@ -1,32 +1,18 @@
 package IronBarBoi.Paint;
 
-import IronBarBoi.Data.Funcs;
 import IronBarBoi.Main;
 import org.rspeer.runetek.api.commons.StopWatch;
 import org.rspeer.runetek.api.component.tab.Skill;
 import org.rspeer.runetek.api.component.tab.Skills;
 import org.rspeer.runetek.event.types.ItemTableEvent;
-import org.rspeer.runetek.event.types.RenderEvent;
-import org.rspeer.script.Script;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Arrays;
 
 public class MainPaint {
-    public static int barsMade;
+    static int barsMade;
     public static StopWatch stopWatch;
-    public static BufferedImage image;
 
-    public static RenderEvent re;
-    static int sc_Counter = 0;
-
-     public static int smithExpStart;
-    //
+    static int smithExpStart;
     static int smithExpGained;
 
     public static void Start(){

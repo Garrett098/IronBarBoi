@@ -15,7 +15,8 @@ import org.rspeer.ui.Log;
 public class Banking extends Task {
     @Override
     public boolean validate() {
-        return Main.ROFCharges > 0 && !Inventory.contains("Iron ore") || Bank.isOpen();
+        return Main.ROFCharges > 0 && !
+                Inventory.contains("Iron ore") || Bank.isOpen();
     }
 
     @Override
