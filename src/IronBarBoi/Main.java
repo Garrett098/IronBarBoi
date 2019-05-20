@@ -21,6 +21,7 @@ import org.rspeer.script.ScriptCategory;
 import org.rspeer.script.ScriptMeta;
 import org.rspeer.script.task.Task;
 import org.rspeer.script.task.TaskScript;
+import org.rspeer.ui.Log;
 
 import java.awt.*;
 
@@ -38,7 +39,12 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
         //GUI.setVisible(true);
         submit(TASKS);
         MainPaint.Start();
-        Funcs.checkROFCharges();
+        if (Funcs.checkROFCharges()){
+            if (ROFCharges < 0){
+                Funcs.checkROFCharges();
+                Log.info("Checked charges a second time");
+            }
+        }
 
     }
 
