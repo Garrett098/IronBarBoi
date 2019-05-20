@@ -21,7 +21,7 @@ public class Funcs {
 
     public static RenderEvent re;
 
-        public static void checkROFCharges(){
+        public static boolean checkROFCharges(){
             if (!Tab.EQUIPMENT.isOpen()){
                 Tab currentTab = Tabs.getOpen();
                 Tabs.open(Tab.EQUIPMENT);
@@ -30,9 +30,14 @@ public class Funcs {
                     Log.info("Clicked check on the ring slot");
                 }
                 Tabs.open(currentTab);
+                return true;
             } else {
-                if (EquipmentSlot.RING.interact("Check")) Log.info("Clicked check on the ring slot");
+                if (EquipmentSlot.RING.interact("Check")) {
+                    Log.info("Clicked check on the ring slot");
+                    return true;
+                }
             }
+            return false;
 
         }
 

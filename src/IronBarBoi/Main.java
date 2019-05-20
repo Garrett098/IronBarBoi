@@ -38,7 +38,9 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
         //GUI.setVisible(true);
         submit(TASKS);
         MainPaint.Start();
-        Funcs.checkROFCharges();
+        if (!Funcs.checkROFCharges()){
+            Funcs.checkROFCharges();
+        }
 
     }
 
