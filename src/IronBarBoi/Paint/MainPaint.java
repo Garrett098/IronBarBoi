@@ -9,11 +9,11 @@ import org.rspeer.runetek.event.types.ItemTableEvent;
 import java.awt.*;
 
 public class MainPaint {
-    static int barsMade;
-    public static StopWatch stopWatch;
+    private static int barsMade;
+    private static StopWatch stopWatch;
 
-    static int smithExpStart;
-    static int smithExpGained;
+    private static int smithExpStart;
+    private static int smithExpGained;
 
     public static void Start(){
         stopWatch = StopWatch.start();
@@ -37,6 +37,7 @@ public class MainPaint {
         g.drawString("RoF Charges: " + Main.ROFCharges, x, y += 20);
         g.drawString("Bars made: " + barsMade, x, y += 20);
         g.drawString("Smithing Exp: " + smithExpGained, x, y += 20);
+        g.drawRect(x - 2, y - 92, 155, 95);
 
     }
 

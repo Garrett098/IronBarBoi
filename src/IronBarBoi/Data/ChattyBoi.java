@@ -18,13 +18,17 @@ public class ChattyBoi {
             Main.ROFCharges = Integer.parseInt(msg);
 
         }
+
+        if (chatMessageEvent.getMessage().contains("Congratulations, you've")){
+            if (Funcs.takeScreenshot(String.format("%s Smithing", Skills.getCurrentLevel(Skill.SMITHING)))){
+                Log.fine("Took screenshot!");
+            }
+        }
     }
 
     public static void notify(SkillEvent skillevent){
         if (skillevent.getType() == 1){
-            if (Funcs.takeScreenshot(String.format("%s Smithing", Skills.getCurrentLevel(Skill.SMITHING)))){
-                Log.fine("Took screenshot!");
-            }
+
         }
     }
 

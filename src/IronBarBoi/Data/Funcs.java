@@ -30,17 +30,17 @@ public class Funcs {
                     Log.info("Clicked check on the ring slot");
                 }
                 Tabs.open(currentTab);
+            } else {
+                if (EquipmentSlot.RING.interact("Check")) Log.info("Clicked check on the ring slot");
             }
-            if (EquipmentSlot.RING.interact("Check")){
-                Log.info("Clicked check on the ring slot");
-            }
+
         }
 
         public static void miniSleep(){
             Time.sleep(Random.mid(350, 770));
         }
 
-        public static boolean takeScreenshot(String fileName){
+        static boolean takeScreenshot(String fileName){
             Image img = re.getProvider().getImage();
             BufferedImage bi = (BufferedImage) img;
             Path path = Script.getDataDirectory();

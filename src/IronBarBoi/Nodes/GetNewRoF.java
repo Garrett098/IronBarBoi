@@ -36,6 +36,9 @@ public class GetNewRoF extends Task {
                     Bank.withdraw(2568, 1);
                     Time.sleepUntil(() -> Inventory.contains(2568), 5000);
                     Funcs.miniSleep();
+                } else {
+                    Log.severe("Out of rings");
+                    return -1;
                 }
             }
 
@@ -52,7 +55,7 @@ public class GetNewRoF extends Task {
                     Log.info("Clicked RoF");
                     Time.sleepUntil(() -> Equipment.isOccupied(EquipmentSlot.RING), 5000);
                     Funcs.miniSleep();
-                    Main.ROFCharges += 140;
+                    Main.ROFCharges = 140;
                 }
             } else {
                 Funcs.checkROFCharges();

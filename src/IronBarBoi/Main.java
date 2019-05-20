@@ -25,7 +25,7 @@ import org.rspeer.script.task.TaskScript;
 import java.awt.*;
 
 
-@ScriptMeta(developer = "MyNamesGeph", name = "IronBarBoi", desc = "Makes iron bars in Edgeville", version = 0.01,  category = ScriptCategory.SMITHING)
+@ScriptMeta(developer = "MyNamesGeph", name = "IronBarBoi", desc = "Makes iron bars in Edgeville", version = 0.02,  category = ScriptCategory.SMITHING)
 public class Main extends TaskScript implements RenderListener, ItemTableListener, ChatMessageListener, SkillListener {
 
     private Task[] TASKS = {new SmeltBars(), new Banking(), new GetNewRoF()};

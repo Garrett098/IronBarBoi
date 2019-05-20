@@ -29,17 +29,19 @@ public class Banking extends Task {
                     Time.sleepUntil(() -> Inventory.isEmpty(), 3000);
                     Funcs.miniSleep();
                 }
-                if (Inventory.isEmpty()) {
-                    Bank.withdrawAll("Iron ore");
+                if (Inventory.isEmpty() && Bank.withdrawAll("Iron ore")) {
                     Time.sleepUntil(() -> Inventory.containsAll("Iron ore"), 5000);
                     Funcs.miniSleep();
 
+                } else {
+                    Log.severe("We're out of iron ore"); return -1;
                 }
                 if (Inventory.containsAll("Iron ore")) {
                     Bank.close();
                     Time.sleepUntil(() -> Bank.isClosed(), 5000);
                     Funcs.miniSleep();
                 }
+
             } else {
                 Log.info("Opening bank");
                 Bank.open();
