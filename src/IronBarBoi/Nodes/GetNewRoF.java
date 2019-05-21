@@ -13,8 +13,8 @@ import org.rspeer.ui.Log;
 public class GetNewRoF extends Task {
     @Override
     public boolean validate() {
-        return Main.ROFCharges <= 0 && !Equipment.isOccupied(EquipmentSlot.RING) ||
-                Main.ROFCharges <= 0 && !Equipment.isOccupied(EquipmentSlot.RING) && Bank.isOpen();
+        return Main.getROFCharges() <= 0 && !Equipment.isOccupied(EquipmentSlot.RING) ||
+                Main.getROFCharges() <= 0 && !Equipment.isOccupied(EquipmentSlot.RING) && Bank.isOpen();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class GetNewRoF extends Task {
                     Log.info("Clicked RoF");
                     Time.sleepUntil(() -> Equipment.isOccupied(EquipmentSlot.RING), 5000);
                     Funcs.miniSleep();
-                    Main.ROFCharges = 140;
+                    Main.setROFCharges(140);
                 }
             } else {
                 Funcs.checkROFCharges();

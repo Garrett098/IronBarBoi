@@ -42,7 +42,7 @@ public class Funcs {
         }
 
         public static void miniSleep(){
-            Time.sleep(Random.mid(350, 770));
+            Time.sleep(Random.mid(350, 1070));
         }
 
         static boolean takeScreenshot(String fileName){

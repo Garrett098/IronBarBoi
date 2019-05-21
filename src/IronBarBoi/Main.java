@@ -3,16 +3,12 @@ package IronBarBoi;
 import IronBarBoi.Data.ChattyBoi;
 import IronBarBoi.Data.Data;
 import IronBarBoi.Data.Funcs;
-import IronBarBoi.GUI.DebugGUI;
 import IronBarBoi.Nodes.Banking;
 import IronBarBoi.Nodes.GetNewRoF;
 import IronBarBoi.Nodes.SmeltBars;
 import IronBarBoi.Paint.MainPaint;
 import org.rspeer.runetek.api.scene.Players;
-import org.rspeer.runetek.event.listeners.ChatMessageListener;
-import org.rspeer.runetek.event.listeners.ItemTableListener;
-import org.rspeer.runetek.event.listeners.RenderListener;
-import org.rspeer.runetek.event.listeners.SkillListener;
+import org.rspeer.runetek.event.listeners.*;
 import org.rspeer.runetek.event.types.ChatMessageEvent;
 import org.rspeer.runetek.event.types.ItemTableEvent;
 import org.rspeer.runetek.event.types.RenderEvent;
@@ -24,22 +20,28 @@ import org.rspeer.script.task.TaskScript;
 import org.rspeer.ui.Log;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 
-@ScriptMeta(developer = "MyNamesGeph", name = "IronBarBoi", desc = "Makes iron bars in Edgeville", version = 0.02,  category = ScriptCategory.SMITHING)
-public class Main extends TaskScript implements RenderListener, ItemTableListener, ChatMessageListener, SkillListener {
+@ScriptMeta(developer = "MyNamesGeph", name = "IronBarBoi", desc = "Makes iron bars in Edgeville", version = 0.04,  category = ScriptCategory.SMITHING)
+public class Main extends TaskScript implements RenderListener, ItemTableListener, ChatMessageListener, SkillListener, MouseInputListener {
 
     private Task[] TASKS = {new SmeltBars(), new Banking(), new GetNewRoF()};
-    DebugGUI GUI = new DebugGUI();
-    public static int ROFCharges = 0;
+
+    private static int ROFCharges = 0;
+    public static int getROFCharges() {
+        return ROFCharges;
+    }
+    public static void setROFCharges(int ROFCharges) {
+        Main.ROFCharges = ROFCharges;
+    }
 
 
     @Override
     public void onStart() {
-        //GUI.setVisible(true);
         submit(TASKS);
         MainPaint.Start();
-        if (Funcs.checkROFCharges()){
+        if (Funcs.checkROFCharges()){ // Sometimes it returns the right value, sometimes it returns 0  ¯\_(ツ)_/¯
             if (ROFCharges < 0){
                 Funcs.checkROFCharges();
                 Log.info("Checked charges a second time");
@@ -57,10 +59,6 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
         //
         MainPaint.notify(g2);
         Funcs.re = renderEvent;
-
-
-        //
-
     }
 
     @Override
@@ -82,5 +80,10 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
     public void notify(SkillEvent skillEvent) {
         ChattyBoi.notify(skillEvent);
 
+    }
+
+    @Override
+    public void notify(MouseEvent mouseEvent) {
+        MainPaint.notify(mouseEvent);
     }
 }
