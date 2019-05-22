@@ -17,7 +17,6 @@ import org.rspeer.script.ScriptCategory;
 import org.rspeer.script.ScriptMeta;
 import org.rspeer.script.task.Task;
 import org.rspeer.script.task.TaskScript;
-import org.rspeer.ui.Log;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -44,7 +43,7 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
         if (Funcs.checkROFCharges()){ // Sometimes the chat listener catches it, sometimes it doesn't
             if (ROFCharges < 0){
                 Funcs.checkROFCharges();
-                Log.info("Checked charges a second time");
+                //Log.info("Checked charges a second time"); //debug
             }
         }
 
