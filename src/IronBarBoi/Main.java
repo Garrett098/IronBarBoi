@@ -41,7 +41,7 @@ public class Main extends TaskScript implements RenderListener, ItemTableListene
     public void onStart() {
         submit(TASKS);
         MainPaint.Start();
-        if (Funcs.checkROFCharges()){ // Sometimes the chat listener catches it, sometimes it doesn't ¯\_(ツ)_/¯
+        if (Funcs.checkROFCharges()){ // Sometimes the chat listener catches it, sometimes it doesn't
             if (ROFCharges < 0){
                 Funcs.checkROFCharges();
                 Log.info("Checked charges a second time");
