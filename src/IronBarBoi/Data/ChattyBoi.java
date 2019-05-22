@@ -12,12 +12,13 @@ public class ChattyBoi {
 
 
     public static void notify(ChatMessageEvent chatMessageEvent) {
+        String msg1;
         //Checks for RoF charges in chat
         if (chatMessageEvent.getMessage().contains("You can smelt")) {
-            String msg = chatMessageEvent.getMessage();
-            msg = msg.replaceAll("[^0-9]", "");
-            msg = msg.strip();
-            Main.setROFCharges(Integer.parseInt(msg));
+            msg1 = chatMessageEvent.getMessage();
+            msg1 = msg1.replaceAll("[^0-9]", "");
+            //msg1 = msg1.strip();
+            Main.setROFCharges(Integer.parseInt(msg1));
 
         }
 
