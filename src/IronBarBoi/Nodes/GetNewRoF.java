@@ -19,7 +19,7 @@ public class GetNewRoF extends Task {
 
     @Override
     public int execute() {
-        Log.fine("-------GetNewRoF-------");
+        //Log.fine("-------GetNewRoF-------"); //debug
 
         if (!Bank.isOpen()){
             Bank.open();
@@ -52,7 +52,7 @@ public class GetNewRoF extends Task {
         if (Inventory.contains(2568)){
             if (!Equipment.isOccupied(EquipmentSlot.RING)) {
                 if (Inventory.getFirst(2568).click()) {
-                    Log.info("Clicked RoF");
+                    //Log.info("Clicked RoF");
                     Time.sleepUntil(() -> Equipment.isOccupied(EquipmentSlot.RING), 5000);
                     Funcs.miniSleep();
                     Main.setROFCharges(140);

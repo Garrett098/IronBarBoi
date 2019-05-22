@@ -20,7 +20,7 @@ public class Banking extends Task {
 
     @Override
     public int execute() {
-        Log.fine("-----Banking------");
+        //Log.fine("-----Banking------"); //debug
         if (Data.BANK_AREA.contains(Players.getLocal())) {
             if (Bank.isOpen()) {
                 if (Inventory.containsAll("Iron bar")) {
@@ -42,7 +42,7 @@ public class Banking extends Task {
                 }
 
             } else {
-                Log.info("Opening bank");
+                //Log.info("Opening bank"); //debug
                 Bank.open();
                 Time.sleepUntil(() -> Bank.isOpen(), 8000);
                 Funcs.miniSleep();
