@@ -20,7 +20,7 @@ public class Banking extends Task {
 
     @Override
     public int execute() {
-        Log.fine("-----Banking------");
+        //Log.fine("-----Banking------"); //debug
         if (Data.BANK_AREA.contains(Players.getLocal())) {
             if (Bank.isOpen()) {
                 if (Inventory.containsAll("Iron bar")) {

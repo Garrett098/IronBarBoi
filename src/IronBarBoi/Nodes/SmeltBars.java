@@ -10,7 +10,6 @@ import org.rspeer.runetek.api.component.tab.Inventory;
 import org.rspeer.runetek.api.scene.Players;
 import org.rspeer.runetek.api.scene.SceneObjects;
 import org.rspeer.script.task.Task;
-import org.rspeer.ui.Log;
 
 public class SmeltBars extends Task {
 
@@ -29,10 +28,10 @@ public class SmeltBars extends Task {
         } else {
             SceneObject furnace = SceneObjects.getNearest(Data.FURNACE_PRED);
             if (furnace.interact("Smelt")){
-                Log.info("Clicked on furnace");
+                //Log.info("Clicked on furnace");
                 if (Time.sleepUntil(() -> Interfaces.isVisible(270,15), 5000)){
                     Funcs.miniSleep();
-                    Log.info("Clicked iron bar creation");
+                    //Log.info("Clicked iron bar creation");
                     Interfaces.getComponent(270,15).click();
                     Time.sleep(1200,2400);
                 }
